@@ -22,7 +22,8 @@ function plot_online_PSTHs
     
     global psths;
     global n_trials;
-       
+    global cleared;
+         
     % Used to connect to the Cheetah data acquisition system.
     server_name   = 'localhost';
      
@@ -36,11 +37,15 @@ function plot_online_PSTHs
     % Time bins for online PSTHs.
     bins          = -baseline:bin_width:stim_duration;
     
-    % Online PSTHs (spikes/sec).
+    % Online PSTHs (spikes/sec).    
     psths         = zeros(n_conds, length(bins));
     
-    % Number of analyzed trials per stimulus condition.
+    % Number of analyzed trials per stimulus condition.    
     n_trials      = zeros(1, n_conds);
+    
+    % True if no trial has been yet analyzed or plots with the PSTHs have 
+    % been cleared. Otherwise, false.  
+    cleared       = true;
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Establish a connection with the Cheetah data acquisition system.
@@ -95,9 +100,11 @@ function clear_button
 	
     global psths;
     global n_trials;
+    global cleared;
     
     psths    = zeros(size(psths));
     n_trials = zeros(size(n_trials));
+    cleared  = true;
     
     fprintf('Successfully cleared the current plots.\n');
     
@@ -162,7 +169,7 @@ function exit_code = establish_connection(server_name, acq_entity)
         
     catch err
         
-        fprintf('Critical error: %s\n', err);
+        fprintf('Critical error: %s.\n', err);
         return;
         
     end    
@@ -184,7 +191,7 @@ function close_connection(acq_entity)
         
     catch err
         
-        fprintf('Critical error: %s\n', err);
+        fprintf('Critical error: %s.\n', err);
         
     end
     
@@ -238,9 +245,11 @@ function [raw_data, all_spikes, trial_data] = process_data(raw_data, all_spikes,
     trial_stop = find(raw_data(index0:end, 2) == 252 & raw_data(index0:end, 3) == 1);
     trial_stop = trial_stop + index0 - 1;
     
-    % Number of trials.
-    n_trials = min([length(trial_start) length(trial_stop)]);
-    if ~n_trials
+    % Number of trials. Leave out the last detected trial and analyze it 
+    % during the next call. Some spikes of that trial could only be read out 
+    % during the next call.
+    n_trials = min([length(trial_start) length(trial_stop)]) - 1;
+    if n_trials < 1
         return;
     end
     
@@ -262,7 +271,7 @@ function [raw_data, all_spikes, trial_data] = process_data(raw_data, all_spikes,
            curr_trial(5, 2) < 1    || curr_trial(6, 2) ~= 0 || ...
            curr_trial(7, 2) ~= 253 || curr_trial(8, 2) ~= 0 || ...
            curr_trial(9, 2) ~= 252 || isempty(photocells)
-            fprintf('Skipping one trial with corrupted header information.\n');
+            fprintf('Skipping one corrupted trial.\n');
         else
             % Extract trial information from the header.
             trial_data(end + 1).header_start = curr_trial(1, 1);
@@ -282,20 +291,27 @@ function [raw_data, all_spikes, trial_data] = process_data(raw_data, all_spikes,
                     trial_data(end).experiment_type, trial_data(end).condition, length(photocells), length(trial_data(end).spikes)); 
         end
 
-    end
+    end    
     
-    % Remove analyzed spikes. 
-    last_trial = trial_stop(n_trials);
-    selection  = all_spikes >= raw_data(last_trial, 1) - baseline;
-    all_spikes = all_spikes(selection);
+	% Remove analyzed spikes.
+	last_trial = trial_stop(n_trials);
+	selection  = all_spikes >= raw_data(last_trial, 1) - baseline;
+ 	all_spikes = all_spikes(selection);
     
-    % Remove analyzed trials.
-    raw_data   = raw_data(last_trial:end, :);
+	% Remove analyzed trials.
+	raw_data   = raw_data(last_trial:end, :);
     
 end
 
 function [psths, n_trials] = update_PSTHs(psths, n_trials, bins, bin_width, trial_data)
-
+    
+    % Discard the very first trial. It may miss some spikes at the beginning.
+    global cleared;
+    if cleared
+        trial_data = trial_data(2:end);
+        cleared    = false;
+    end
+    
     if isempty(trial_data)
         return;
     end
@@ -341,7 +357,7 @@ function plot_PSTHs(psths, n_rows, n_columns, n_trials, bins)
         for col = 1:n_columns
             
             index = n_columns * (row - 1) + col;
-            subplot(n_rows, n_columns, index), plot(psths(index, :), '-b'), hold on;
+            subplot(n_rows, n_columns, index), plot(psths(index, xrange(1):xrange(end)), '-b'), hold on;
             plot([stimulus_onset stimulus_onset], yrange, '-r'), hold off;
             
             set(gca, 'XLim', xrange);
