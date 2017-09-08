@@ -29,7 +29,7 @@ function client_discrimination
     % and false correspond to the left and right spouts, respectively.
     % IMPORTANT! The number of elements in both 'filenames' and
     % 'corr_choice' must be matched! 
-    corr_choice = [true false];
+    corr_choice = [false true];
     % To reverse the spout x stimulu mapping, uncomment the following line.
     % corr_choice = ~corr_choice;
    
@@ -80,9 +80,15 @@ function client_discrimination
     
     global udp_object; 
     global curr_state;
+    global trial_info;
     
     curr_state.all_states = {START_TEST, STOP_TEST, EXIT_TEST, STOP_SERVER};
     curr_state.pointer    = 2;
+    
+    trial_info = struct('trial_no', {}, 'condition', {}, 'command', {}, 'rewarded', {}, ...
+                        'punished', {}, 'start', {}, 'stop', {},  ...
+                        'left_licks_cputime', {}, 'left_licks_clock', {}, ...
+                        'right_licks_cputime', {}, 'right_licks_clock', {});
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -130,13 +136,21 @@ function client_discrimination
                 [stim_condition, presentation_order] = next_condition(presentation_order);
                 current_command = sprintf(command_template, stim_condition);
                 trial_no = trial_no + 1;
-                fprintf('Trial no. %03d: %s\n', trial_no, current_command);
+                                
+                trial_info(end + 1).trial_no = trial_no;
+                trial_info(end).condition = stim_condition;
+                trial_info(end).command = current_command;
                 
+                fprintf('Trial no. %03d: %s\n', trial_no, current_command);
                 send_header_info(cheetah_io, exp_id, stim_condition);
+                trial_info(end).start = {cputime clock};
+                
                 fprintf(udp_object, current_command);                 
                 process_licking_events(licking_ports, SPOUT_IDS, LICK_THR, TIME_STEP, ...
                                        phases, corr_choice(stim_condition), reward_io, reward_duration, tone, audio_fs);
+                
                 send_trial_end(cheetah_io);
+                trial_info(end).stop = {cputime clock};
                 
             case 2 % STOP_TEST
                 % Do nothing.
@@ -156,7 +170,11 @@ function client_discrimination
     close_connection(EXIT_TEST);
     close(gcf);     
     release_phidgets(licking_ports);
-        
+   
+    save(datestr(clock, 'yyyy-mm-dd HH-MM-SS'), 'command_template', 'phases',  ...
+         'filenames', 'corr_choice', 'reward_duration', 'tone_fs', 'tone_dur', ...
+         'audio_fs', 'TIME_STEP', 'SPOUT_IDS', 'LICK_THR', 'trial_info');
+    
 end
 
 function exit_code = establish_connection(ip_address, client_port, server_port, buffer_size, server_msg_on_error)
@@ -301,6 +319,8 @@ end
 
 function process_licking_events(licking_ports, spout_ids, lick_thr, time_step, phases, corr_choice, reward_io, reward_duration, tone, audio_fs)   
     
+    global trial_info;
+    
     % Animal licks a spout at the beginning of stimulus presentation.
     % Animal should be punished in this case.
     timer1 = timer('TimerFcn', 'disp('''')', 'StartDelay', phases(1)); % sec
@@ -378,15 +398,30 @@ function process_licking_events(licking_ports, spout_ids, lick_thr, time_step, p
         pause(time_step);
     end
     
+    trial_info(end).rewarded = rewarded;
+    trial_info(end).punished = punished;
+    
 end
 
 function [left_lick, right_lick] = detect_licks(licking_ports, spout_ids, lick_threshold)
 
+    global trial_info;
+    
     left_spout  = spout_ids(1, 1);
     right_spout = spout_ids(1, 2); 
     
     left_lick   = analogin(left_spout, licking_ports) > lick_threshold;
 	right_lick  = analogin(right_spout, licking_ports) > lick_threshold;
+    
+    if left_lick
+        trial_info(end).left_licks_cputime = [trial_info(end).left_licks_cputime cputime]; 
+        trial_info(end).left_licks_clock   = [trial_info(end).left_licks_clock; clock];
+    end
+    
+    if right_lick
+        trial_info(end).right_licks_cputime = [trial_info(end).right_licks_cputime cputime]; 
+        trial_info(end).right_licks_clock   = [trial_info(end).right_licks_clock; clock];
+    end
 
 end
 
