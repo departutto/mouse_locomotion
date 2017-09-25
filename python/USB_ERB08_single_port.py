@@ -2,7 +2,6 @@ from mcculw import ul
 from mcculw.enums import InterfaceType
 from mcculw.enums import DigitalPortType
 from mcculw.ul import ULError
-import time
 
 class USB_ERB08_single_port:
     """Measurement computing USB-ERB08.
@@ -111,8 +110,6 @@ class USB_ERB08_single_port:
         
         if self.is_created():
             if self.curr_state == self.NULL_STATE:
-                print('here')
                 self.set_state_to_one()
             else:
-                print('there')
                 self.set_state_to_zero()
