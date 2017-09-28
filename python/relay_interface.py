@@ -37,9 +37,6 @@ class USB_ERB08_single_port:
         # Relay identifier.
         self.relay_num = relay_num
         
-        # Indicate that initialization has not been completed yet.
-        self.created = False
-        
         try:
             
             # Check the type of provided input parameters and their range. 
@@ -72,8 +69,8 @@ class USB_ERB08_single_port:
                 # Indicate that an instance of the class has been successfully initialized.
                 self.created = True
             else:
-                raise Exception('No USB DAQ device has been detected.')
-                
+                raise Exception('No USB DAQ device has been detected.')      
+            
         except Exception as err:
             print(err)
         
@@ -81,35 +78,28 @@ class USB_ERB08_single_port:
         
         # Release all resources reserved for the selected DAQ device.
         ul.release_daq_device(self.board_num)
-        
-    def is_created(self):
-        
-        return self.created
     
-    def set_state_to_one(self):
-        
+    def set_state_to_one(self):        
+
         try:
-            if self.is_created():
-                ul.d_out(self.board_num, self.port_type, self.one)
-                self.curr_state = self.one
-                
+            ul.d_out(self.board_num, self.port_type, self.one)
+            self.curr_state = self.one
+            
         except Exception as err:
             print(err)
     
     def set_state_to_zero(self):
         
         try:
-            if self.is_created(): 
-                ul.d_out(self.board_num, self.port_type, self.NULL_STATE)
-                self.curr_state = self.NULL_STATE
+            ul.d_out(self.board_num, self.port_type, self.NULL_STATE)
+            self.curr_state = self.NULL_STATE
                 
         except Exception as err:
             print(err)
         
     def change_state(self):
         
-        if self.is_created():
-            if self.curr_state == self.NULL_STATE:
-                self.set_state_to_one()
-            else:
-                self.set_state_to_zero()
+        if self.curr_state == self.NULL_STATE:
+            self.set_state_to_one()
+        else:
+            self.set_state_to_zero()

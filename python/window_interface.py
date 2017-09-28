@@ -1,4 +1,4 @@
-import tkinter, time, re
+import tkinter, time
 
 class Valve_controls(tkinter.Frame):
     
@@ -14,6 +14,7 @@ class Valve_controls(tkinter.Frame):
     MINIMUM_REWARD_DUR = 15
     
     def __init__(self, master = None, valve = None):
+        
         tkinter.Frame.__init__(self, master)
         self.pack()
         self.create_widgets()
@@ -21,6 +22,7 @@ class Valve_controls(tkinter.Frame):
         self.reward_dur = self.MINIMUM_REWARD_DUR
     
     def hot_keys(self, event_descriptor):
+        
         if event_descriptor.keysym in {'o', 'O'}:
             self.open_valve()
         if event_descriptor.keysym in {'c', 'C'}:
@@ -28,19 +30,22 @@ class Valve_controls(tkinter.Frame):
         if event_descriptor.keysym in {'r', 'R'}:
             self.deliver_reward()
         
-    def open_valve(self):        
+    def open_valve(self):   
+        
         print("Open valve")
         if self.valve and hasattr(self.valve, "set_state_to_one"):
             self.valve.set_state_to_one()    
         self.button_open_valve.focus_set()
     
     def close_valve(self):
+        
         print("Close valve")
         if self.valve and hasattr(self.valve, "set_state_to_zero"):
             self.valve.set_state_to_zero()  
         self.button_close_valve.focus_set()
         
     def deliver_reward(self):  
+        
         reward_str = self.entry_reward_dur.get()
         
         if reward_str.isdigit(): 
@@ -93,7 +98,7 @@ class User_window(tkinter.Tk):
     def __init__(self, valve = None):
         tkinter.Tk.__init__(self)      
         
-        controls = Valve_controls(self)        
+        controls = Valve_controls(self, valve)        
         controls.pack()      
         self.bind('<Key-o>', controls.hot_keys)
         self.bind('<Key-O>', controls.hot_keys)
@@ -103,7 +108,7 @@ class User_window(tkinter.Tk):
         self.bind('<Key-R>', controls.hot_keys)
         
         self.title(self.TITLE)
-        self.protocol("WM_DELETE_WINDOW", self.on_exit)        
+        self.protocol("WM_DELETE_WINDOW", self.on_exit)  
         self.valve = valve
     
     def on_exit(self):
