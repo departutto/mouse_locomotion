@@ -1,6 +1,6 @@
 <ol>
 <li> Download the backend library <i>libusb</i> (version 1.0) at the following <a href="https://sourceforge.net/projects/libusb/files/">link</a>. Unzip the library onto your hard drive. Depending on your processor type, open either folder <i>MS32</i> (x32 architecture) or <i>MS64</i> (x64 architecture) and copy file <i>libusb-1.0.dll</i> stored in that folder into <i>/Windows/System32/</i>.
-<li> Download an automatic driver installer GUI application for WinUSB, libusb-win32 and libusbK at the following <a href="http://zadig.akeo.ie/">link</a>.
+<li> Download an automatic driver installer GUI application for WinUSB, libusb-win32 and libusbK at the following <a href="http://zadig.akeo.ie/">link</a>. Open the program and install the driver(s) needed for communication between your device (in my case, an optical mouse) and the <i>libusb</i> library.
 </ol>
 Useful links:
 
