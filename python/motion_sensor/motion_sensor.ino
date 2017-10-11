@@ -65,7 +65,7 @@ extern prog_uchar firmware_data[];
 const byte CPI = 1;
 
 // Sampling period for the motion sensor (in milliseconds).
-const int PERIOD = 10; 
+const int PERIOD = 11; 
 
 // Speed of the motion sensor relative to surface in cm/sec.
 float speed;
