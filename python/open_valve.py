@@ -1,6 +1,5 @@
 from mcculw import ul
 from mcculw.enums import DigitalPortType
-import motion_sensor as ms
 import msvcrt
 import sys
 
@@ -16,9 +15,6 @@ except:
     print("Error: Failed to decipher relay identifier or its value is incorrect!")
     exit()
 
-# Port to which the motion sensor is connected to.
-port_name = "COM4"
-
 # DAQ board identifier in Windows.
 daq_board_number = 0
 
@@ -32,14 +28,6 @@ relay_descriptors = [(DigitalPortType.FIRSTPORTCL, 1), (DigitalPortType.FIRSTPOR
 # Selected bank of relays (one of the two, see above) and relay within it.
 selected_bank, selected_relay = relay_descriptors[relay_identifier] 
 
-# Connect to the motion sensor.
-sensor = ms.Motion_sensor(port_name)
-if sensor.is_connected():
-    print("Successfully connected to the motion sensor.")
-else:
-    print("Failed to connect to the motion sensor.")
-    exit()
-    
 # Open the valve.
 ul.d_out(daq_board_number, selected_bank, selected_relay)
             
