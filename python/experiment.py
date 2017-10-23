@@ -12,10 +12,14 @@ import time
 import threading
 from mcculw import ul
 from mcculw.enums import DigitalPortType
+import motion_sensor as ms
 
 class Experiment:
     
-    # Time during which the valve is open and the animal receives water reward (in seconds).
+    # Port to which the motion sensor is connected to.
+    sensor_port = "COM4"
+    
+    # Time interval during which the valve is open and the animal receives water reward (in seconds).
     REWARD_DURATION = 0.010
     
     # DAQ board identifier in Windows.
@@ -31,6 +35,11 @@ class Experiment:
     
     def __init__(self):      
         
+        # Connect to the motion sensor.
+        sensor = ms.Motion_sensor(name = type(self).sensor_port)
+        if sensor.is_connected():
+            print("Successfully connected to the motion sensor.")
+            
         # Selected bank of relays (one of the two, see above) and relay within it.
         self.selected_bank, self.selected_relay = type(self).RELAY_DESCRIPTORS[type(self).RELAY_IDENTIFIER] 
         
