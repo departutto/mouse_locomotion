@@ -65,7 +65,7 @@ extern prog_uchar firmware_data[];
 const byte CPI = 1;
 
 // Sampling period for the motion sensor (in milliseconds).
-const int PERIOD = 11; 
+const int PERIOD = 10; 
 
 // Speed of the motion sensor relative to surface in cm/sec.
 float speed;
@@ -263,7 +263,9 @@ void loop() {
   time_difference = current_time - previous_time; // milliseconds
   speed = (2.54 / (CPI * 200)) * sqrt( (*x) * (*x) + (*y) * (*y) ) / (time_difference / 1000.0); // cm/sec
   
-  Serial.println(time_difference);
+  if (time_difference != PERIOD) 
+    speed = -1 * speed;
+    
   Serial.println(speed, 1);
   
   previous_time = current_time;
