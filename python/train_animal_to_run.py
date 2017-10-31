@@ -25,7 +25,7 @@ relay_descriptors = [(DigitalPortType.FIRSTPORTCL, 1), (DigitalPortType.FIRSTPOR
 selected_bank, selected_relay = relay_descriptors[relay_identifier] 
         
 # Time interval during which the valve is open and the animal receives water reward (in seconds).
-reward_duration = 0.010
+reward_duration = 0.011
 
 # Total number of the rewards delivered to the animal.
 n_rewards = 0
@@ -54,6 +54,9 @@ counter = 0
 
 # Timestamp corresponding to the beginning of a training session.  
 beginning_training_session = time.clock()
+
+# Display time corresponding to the beginning of a training session.
+print("Start time: " + time.strftime("%X", time.localtime()))
 
 # Repeat unless interrupted by a keystroke.
 while not msvcrt.kbhit():
