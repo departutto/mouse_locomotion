@@ -93,6 +93,15 @@ unsigned long current_time;
 unsigned long previous_time;
 unsigned long time_difference;
 
+// Analog input for the photodiode attached to the monitor screen. 
+const byte photocellPin = 0;
+
+// Threshold used for detection of the onset/offset of stimulus presentation.
+const int photocellThr = 200;
+
+// Signal from the photodiode.
+int photocell;
+
 //-----------------------------------------------------------------------------------------------------------
 
 void setup() {
@@ -258,14 +267,21 @@ void loop() {
   xydat[2] = (byte) adns_read_reg(REG_Delta_Y_L);
   xydat[3] = (byte) adns_read_reg(REG_Delta_Y_H); 
   digitalWrite(SENSOR_PIN, HIGH); 
+
+  // Reads the photodiode signal.
+  photocell = analogRead(photocellPin);
   
   current_time = millis();
   time_difference = current_time - previous_time; // milliseconds
   speed = (2.54 / (CPI * 200)) * sqrt( (*x) * (*x) + (*y) * (*y) ) / (time_difference / 1000.0); // cm/sec
-  
+
+  // Onset/offset of stimulus presentation detected.
+  if (photocell > photocellThr)
+    speed = -1 * (speed + 1); // By adding 1, we account for the cases where the speed is 0.
+
   if (time_difference != PERIOD) 
-    speed = -1 * speed;
-    
+    speed = -1234.5;
+
   Serial.println(speed, 1);
   
   previous_time = current_time;
