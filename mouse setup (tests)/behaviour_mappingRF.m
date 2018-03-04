@@ -27,11 +27,16 @@ if ~isempty(misaligned)
     return;
 end
 
-corrupted = find(consolidated(headers_start + 1, 2)      |  consolidated(headers_start + 1, 3)      | ...
-                 consolidated(headers_start + 2, 2) ~= 8 |  consolidated(headers_start + 2, 3) ~= 1 | ...
-                 consolidated(headers_start + 3, 2)      |  consolidated(headers_start + 3, 3)      | ...
-               (~consolidated(headers_start + 4, 2)      & ~consolidated(headers_start + 4, 3))     | ...
-                 consolidated(headers_start + 7, 2)      |  consolidated(headers_start + 7, 3), 1);
+% Tests: 
+%    ( 8, 1) - mapping a receptive field; 
+%    (11, 3) - current source density analysis;
+%    ( 8, 2) - stimulus selectivity (search test);
+%    (12, 0) - stimulus repetition.
+corrupted = find(consolidated(headers_start + 1, 2)       |  consolidated(headers_start + 1, 3)      | ...
+                 consolidated(headers_start + 2, 2) ~= 12 |  consolidated(headers_start + 2, 3) ~= 0 | ... 
+                 consolidated(headers_start + 3, 2)       |  consolidated(headers_start + 3, 3)      | ...
+               (~consolidated(headers_start + 4, 2)       & ~consolidated(headers_start + 4, 3))     | ...
+                 consolidated(headers_start + 7, 2)       |  consolidated(headers_start + 7, 3), 1);
 if ~isempty(corrupted)
     disp(['Header start and stop indices = ' num2str(headers_start(corrupted)) ' x ' num2str(headers_stop(corrupted))])
     return;
@@ -75,7 +80,7 @@ for trial_no = 1:length(headers_start)
     
     if length(trials(trial_no).photoevents) ~= 2
         fprintf('Trial #%d: N(photocell events) = %d.\n', trial_no, length(trials(trial_no).photoevents));        
-        if length(trials(trial_no).photoevents) > 2
+        if length(trials(trial_no).photoevents) == 3
             trials(trial_no).photoevents = trials(trial_no).photoevents(1:2);
             disp('Reduced to the first two photocell events!');
         end
