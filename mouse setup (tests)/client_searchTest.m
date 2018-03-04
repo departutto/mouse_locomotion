@@ -10,10 +10,10 @@ function client_searchTest
     %   param #5 - color of the blank screen during ISI, unsigned byte;
     %   params #6 and 7 - coordinates of the uppermost left corner of the
     %                     stimuli on the screen, unsigned bytes.
-    command_template = 'server_searchTest(window_pointer, %02d, 18, 60, 128, 361, 1)';
+    command_template = 'server_searchTest(window_pointer, %02d, 18, 36, 128, 361, 1)';
     
     % Maximum duration of one trial, seconds.
-    trial_duration = 1.35;
+    trial_duration = 1.2;
     
     % Experiment identifier.
     exp_id = 34;
@@ -33,6 +33,13 @@ function client_searchTest
     
     % Total number of different stimulus conditions.
     n_conditions = length(filenames);
+    
+    % Time for sending header information and "trial end" markers, seconds.
+    % During this time no stimuli are presented.
+    transmission_time = 0.15; 
+    
+    % Stimulus conditions as they appear in the experiment.
+    conditions = [];
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Modify the following parameters only when needed. Act with caution!
@@ -97,9 +104,14 @@ function client_searchTest
                 fprintf('Trial no. %03d: %s\n', trial_no, current_command);
                 
                 send_header_info(io_object, exp_id, stim_condition);
+                conditions(end + 1) = stim_condition;
+                pause(transmission_time);
+                
                 fprintf(udp_object, current_command);                
                 pause(trial_duration);
+                
                 send_trial_end(io_object);
+                pause(transmission_time);
                 
             case 2 % STOP_TEST
                 % Do nothing.
@@ -118,6 +130,9 @@ function client_searchTest
     
     close_connection(EXIT_TEST);
     close(gcf);
+    
+    save(datestr(clock, 'yyyy-mm-dd HH-MM-SS'), 'command_template', 'trial_duration',  ...
+         'exp_id', 'n_conditions', 'transmission_time', 'conditions', 'TIME_STEP');
     
 end
 
@@ -191,34 +206,44 @@ function send_header_info(io_object, exp_id, stim_condition)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Number of bits in binary format.
-    n_bits = 8;
+    % n_bits = 8;
     
     % Header start.
-	putvalue(io_object, fliplr(dec2bin(254, n_bits)) - '0');
-	putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+	% putvalue(io_object, fliplr(dec2bin(254, n_bits)) - '0');
+	% putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+    putvalue(io_object, 254);
+	putvalue(io_object, 0);
     
     % Experiment identifier.
-    putvalue(io_object, fliplr(dec2bin(exp_id, n_bits)) - '0');
-	putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+    % putvalue(io_object, fliplr(dec2bin(exp_id, n_bits)) - '0');
+	% putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+    putvalue(io_object, exp_id);
+	putvalue(io_object, 0);
     
     % Condition label.
- 	putvalue(io_object, fliplr(dec2bin(stim_condition, n_bits)) - '0');
- 	putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+ 	% putvalue(io_object, fliplr(dec2bin(stim_condition, n_bits)) - '0');
+ 	% putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+    putvalue(io_object, stim_condition);
+ 	putvalue(io_object, 0);
     
     % Header end.
- 	putvalue(io_object, fliplr(dec2bin(253, n_bits)) - '0');   
-	putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+ 	% putvalue(io_object, fliplr(dec2bin(253, n_bits)) - '0');   
+	% putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+    putvalue(io_object, 253);   
+	putvalue(io_object, 0);
             
 end
 
 function send_trial_end(io_object)
 
     % Number of bits in binary format.
-    n_bits = 8;
+    % n_bits = 8;
 
     % Send the marker of trial end.
- 	putvalue(io_object, fliplr(dec2bin(252, n_bits)) - '0');   
-	putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+ 	% putvalue(io_object, fliplr(dec2bin(252, n_bits)) - '0');   
+	% putvalue(io_object, fliplr(dec2bin(0, n_bits)) - '0');
+    putvalue(io_object, 252);   
+	putvalue(io_object, 0);
 
 end
 
