@@ -33,7 +33,7 @@ end
 %    ( 8, 2) - stimulus selectivity (search test);
 %    (12, 0) - stimulus repetition.
 corrupted = find(consolidated(headers_start + 1, 2)       |  consolidated(headers_start + 1, 3)      | ...
-                 consolidated(headers_start + 2, 2) ~= 12 |  consolidated(headers_start + 2, 3) ~= 0 | ... 
+                 consolidated(headers_start + 2, 2) ~=  8 |  consolidated(headers_start + 2, 3) ~= 2 | ... 
                  consolidated(headers_start + 3, 2)       |  consolidated(headers_start + 3, 3)      | ...
                (~consolidated(headers_start + 4, 2)       & ~consolidated(headers_start + 4, 3))     | ...
                  consolidated(headers_start + 7, 2)       |  consolidated(headers_start + 7, 3), 1);
@@ -118,7 +118,10 @@ stim_duration = [];
 for trial_no = 1:length(trials)
     if length(trials(trial_no).photoevents) == 2
         stim_duration(end + 1) = trials(trial_no).photoevents(2) - trials(trial_no).photoevents(1);
-    else
+    elseif length(trials(trial_no).photoevents) == 4
+        stim_duration(end + 1) = trials(trial_no).photoevents(2) - trials(trial_no).photoevents(1);
+        stim_duration(end + 1) = trials(trial_no).photoevents(4) - trials(trial_no).photoevents(3);
+	else    
         stim_duration(end + 1) = -1;
     end
 end
