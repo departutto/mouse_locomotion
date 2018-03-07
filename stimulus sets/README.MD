@@ -5,12 +5,12 @@
 <b>Diagonal:</b> 27'' (68.58 cm)<br>
 <b>Dimensions:</b> 59.77 x 33.62 cm<br>
 
-<br><br>
+<br>
+
 <b>Distance from the eye to:</b><br>
-<ul>
-<li>the monitor screen: 32..34 cm.</li>
-<li>the surface of the table: 33..35 cm.</li>
-</ul>
+- <i>the monitor screen:</i> 32..34 cm.<br>
+- <i>the surface of the table:</i> 33..35 cm.<br>
+
 
 
 
