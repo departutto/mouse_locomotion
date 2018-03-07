@@ -7,6 +7,6 @@
 
 <br>
 
-<b>Distance from the eye to:</b><br><p>
+<b>Distance from the eye to:</b><br>
 - the monitor screen: 32..34 cm<br>
-- the surface of the table: 33..35 cm<br></p>
+- the surface of the table: 33..35 cm<br>
