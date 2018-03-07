@@ -3,7 +3,16 @@
 <b>Resolution:</b> 2560 x 1440 pixels<br>
 <b>Ratio:</b> 16:9<br>
 <b>Diagonal:</b> 27'' (68.58 cm)<br>
-<b>Dimensions:</b> 59.77 x 33.62 cm<br><br>
+<b>Dimensions:</b> 59.77 x 33.62 cm<br>
+
+<br><br>
+<b>Distance from the eye to:</b><br>
+<ul>
+<li>the monitor screen: 32..34 cm.</li>
+<li>the surface of the table: 33..35 cm.</li>
+</ul>
+
+
 
 
 
