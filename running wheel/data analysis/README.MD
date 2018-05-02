@@ -3,9 +3,8 @@
 Scripts:<br>
 <ul>
 <li>
-<b>get_statistics.py</b> - provides statistics on the locomotion signal.<br>
-<b>Input:</b>&nbsp;python get_statistis.py data_file.txt<br>
-<b>Output:</b><br>
+<b>get_statistics.py</b> - provides statistics on the locomotion signal.<br><br>
+<b>Example:</b>&nbsp;>> python get_statistis.py data_file.txt<br>
 Successfully processed: x.txt<br>
 Total number of the retrieved data points is 437601.<br>
 Out of those, 437601 points are proper real numbers.<br>
