@@ -2,7 +2,12 @@
 <p>
 Scripts:<br>
 <ul>
-<li>get_statistics.py - provides statistics on the locomotion signal.</li>
+<li>
+get_statistics.py - provides statistics on the locomotion signal.<br>
+<b>Input:</b>python get_statistis.py data_file.txt<br>
+<b>Output:</b><br>
+ 
+</li>
 </ul>
 <p>
 Examples:<br>
