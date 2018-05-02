@@ -10,5 +10,5 @@ Notes:</br>
 <li>You can use the <a href='https://www.microsoft.com/en-us/store/p/3d-builder/9wzdncrfj3t6'>3D Builder</a> app provided by Microsoft to view 3D models on your Windows PC.</li>
 <li>The original wheel was designed at the lab of <a href='http://www.vib.be/en/research/scientists/Pages/Vincent-Bonin-Lab.aspx'>Vincent Bonin</a> (see file "original Ben's design.stl").</li>
 <li>File "smaller wheel with blades (149 mm diam, thickness 0.8 mm).stl" stores the latest wheel design.</li>
-<li>The weight of the wheel is about 70 gr.</li> 
+<li>The weight of one wheel is approximately 70 gr, depending on an exact material.</li> 
 </ul>
