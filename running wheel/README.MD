@@ -11,4 +11,6 @@ Notes:</br>
 <li>The original wheel was designed at the lab of <a href='http://www.vib.be/en/research/scientists/Pages/Vincent-Bonin-Lab.aspx'>Vincent Bonin</a> (see file "original Ben's design.stl").</li>
 <li>File "smaller wheel with blades (149 mm diam, thickness 0.8 mm).stl" stores the latest wheel design.</li>
 <li>The weight of one wheel is approximately 70 gr, depending on an exact material.</li> 
+<li>To mount a wheel, you will need two <a href='http://www.motionco.co.uk/pillow-block-with-bore-ball-bearing-p-409.html'>bearings</a> and one stainless steel 
+<a href='http://www.motionco.co.uk/stainless-steel-shaft-diameter-p-151.html'>shaft</a> manufactured by MotionCo.
 </ul>
