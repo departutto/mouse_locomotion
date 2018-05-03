@@ -23,8 +23,8 @@ The maximum locomotion speed detected is 48.70 cm/sec.<br>
 <b>Example (in the command line).</b><br> >> python split_per_presentation.py data_file.txt<br>
 Filename = data_file.txt<br>
 N(data points) = 437601<br>
-N(corrupted) = 0<br>
-<b>Output.</b><br><br>
+N(corrupted) = 0<br><br>
+<b>Output.</b>
 <ul>
 <li>Matlab file data_file.txt.m that contains the locomotion signal per stimulus presentation.</li>
 <li>Figure file data_file.txt.jpg that shows duration of stimulus presentations and inter-trial intervals. 
