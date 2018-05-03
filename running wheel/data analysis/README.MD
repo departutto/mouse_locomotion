@@ -24,6 +24,10 @@ The maximum locomotion speed detected is 48.70 cm/sec.<br>
 Filename = data_file.txt<br>
 N(data points) = 437601<br>
 N(corrupted) = 0<br>
-<img src="data_file.txt.jpg">
+<b>Output.</b><br>
+<ul>
+<li>Matlab file data_file.txt.m</li>
+<li><img src="data_file.txt.jpg"></li>
+</ul>
 </li>
 </ul>
