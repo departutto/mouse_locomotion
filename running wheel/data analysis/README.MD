@@ -24,10 +24,11 @@ The maximum locomotion speed detected is 48.70 cm/sec.<br>
 Filename = data_file.txt<br>
 N(data points) = 437601<br>
 N(corrupted) = 0<br>
-<b>Output.</b><br>
+<b>Output.</b><br><br>
 <ul>
-<li>Matlab file data_file.txt.m</li>
-<li><img src="data_file.txt.jpg"></li>
+<li>Matlab file data_file.txt.m that contains the locomotion signal per stimulus presentation.</li>
+<li>Figure file data_file.txt.jpg that shows duration of stimulus presentations and inter-trial intervals. 
+Note that a single trial is assumed to consist of two stimulus presentations.<br><img src="data_file.txt.jpg"></li>
 </ul>
 </li>
 </ul>
