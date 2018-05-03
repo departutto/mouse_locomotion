@@ -17,4 +17,11 @@ The 25th-75th percentiles of the locomotion speed are [ 10.2  26.8] cm/sec.<br>
 The standard deviation of the locomotion speed is 9.81 cm/sec.<br>
 The maximum locomotion speed detected is 48.70 cm/sec.<br>
 </li>
+<li>
+<b>split_per_presentation.py</b> - splits the locomotion signal per stimulus presentation.<br><br>
+<b>Example (in the command line).</b><br> >> python split_per_presentation.py data_file.txt<br>
+Filename = data_file.txt<br>
+N(data points) = 437601<br>
+N(corrupted) = 0<br>
+</li>
 </ul>
