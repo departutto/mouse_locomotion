@@ -14,9 +14,9 @@
  <li><b>Run on the Control PC:</b></li>
  <ul>
  <li><i>client_csdAnalysis.m</i> - presents full-screen flashing checkerboards.</li> 
- <li><i>client_mappingRF.m</i> - randomly presents a checker at the predetermined positions evenly distributed across the screen.</li>
+ <li><i>client_mappingRF.m</i> - randomly presents a checker at the predetermined positions that are evenly distributed across the entire screen.</li>
  <li><i>client_searchTest.m</i> - presents a random sequence of stimuli, one at a time, at a specified position on the screen. </li>
- <li><i>client_stimRepetition.m</i> - presents stimulus repetitions (e.g., X->X) and stimulus alternations (e.g., Y->X), with both stimuli being separated by a blank screen.</li>
+ <li><i>client_stimRepetition.m</i> - presents stimulus repetitions (e.g., X->X) and stimulus alternations (e.g., Y->X), where both stimuli are separated by a blank screen.</li>
  </ul>
  <li><b>Run on the Stimulus PC:</b></li>
  <ul>
