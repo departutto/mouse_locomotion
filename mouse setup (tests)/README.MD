@@ -3,6 +3,7 @@
  All Matlab files in the folder should be distributed among the setup computers according to the following scheme:<br><br>
  
  <img src='file_allocation_scheme.jpg'><br><br>
+ <img src='photodiode.jpg'>
  
  List of the Matlab files:
  
