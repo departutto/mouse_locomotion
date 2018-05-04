@@ -6,7 +6,8 @@
  <ul>
  <li><b>Run on the Cheetah PC:</b></li>
  <ul>
- <li>plot_online_PSTHs.m</li>
+ <li>plot_online_PSTHs.m - plots on-line PSTHs for channel 'acq_entity' for the maximum of 'n_rows' x 'n_columns' stimulus conditions (see script); the actual number of stimulus conditions 
+ used in a particular test must not exceed the maximum number set in this script.</li>
  </ul>
  <li><b>Run on the Control PC:</b></li>
  <ul>
