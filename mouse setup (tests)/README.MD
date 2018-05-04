@@ -3,7 +3,6 @@
  All Matlab files in the folder should be distributed among the setup computers according to the following scheme:<br><br>
  
  <img src='file_allocation_scheme.jpg'><br><br>
- <img src='photodiode.jpg'>
  
  List of the Matlab files:
  
@@ -39,7 +38,5 @@
    
  </ul>
  
- <br><br>
- 
  Connection scheme between the Cheetah Data Acquisition box and a photodiode attached onto the screen of Stimulus PC:<br><br>
- <img scr="photodiode.jpg">
+ <img src='photodiode.jpg'>
