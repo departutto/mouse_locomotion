@@ -4,7 +4,7 @@ Scripts:<br>
 <ul>
 <li>
 <b>get_statistics.py</b> - provides statistics on the locomotion signal.<br><br>
-<b>Example (in the command line).</b><br> >> python get_statistis.py data_file.txt<br>
+<b>Example (in the command line).</b><br> >> python get_statistics.py data_file.txt<br>
 Successfully processed: data_file.txt<br>
 Total number of the retrieved data points is 437601.<br>
 Out of those, 437601 points are proper real numbers.<br>
