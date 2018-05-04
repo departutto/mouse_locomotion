@@ -6,22 +6,22 @@
  <ul>
  <li><b>Run on the Cheetah PC:</b></li>
  <ul>
- <li>plot_online_PSTHs.m - plots on-line PSTHs for channel 'acq_entity' for the maximum of 'n_rows' x 'n_columns' stimulus conditions (see script); the actual number of stimulus conditions 
- used in a particular test must not exceed the maximum number set in this script.</li>
+ <li><i>plot_online_PSTHs.m</i> - plots on-line PSTHs for channel 'acq_entity' for the maximum of 'n_rows' x 'n_columns' stimulus conditions (see script). The actual number of stimulus conditions 
+ used in a particular test must not exceed the maximum allowed number set in this script.</li>
  </ul>
  <li><b>Run on the Control PC:</b></li>
  <ul>
- <li>client_csdAnalysis.m</li> 
- <li>client_mappingRF.m</li>
- <li>client_searchTest.m</li>
- <li>>client_stimRepetition.m</li>
+ <li><i>client_csdAnalysis.m</i></li> 
+ <li><i>client_mappingRF.m</i></li>
+ <li><i>client_searchTest.m</i></li>
+ <li><i>client_stimRepetition.m</i></li>
  </ul>
  <li><b>Run on the Stimulus PC:</b></li>
  <ul>
- <li>server_script.m</li>
- <li>server_csdAnalysis.m</li>
- <li>server_mappingRF</li>
- <li>server_searchTest.m</li>
- <li>server_stimRepetition.m</li>
+ <li><i>server_script.m</i></li>
+ <li><i>server_csdAnalysis.m</i></li>
+ <li><i>server_mappingRF</i></li>
+ <li><i>server_searchTest.m</i></li>
+ <li><i>server_stimRepetition.m</i></li>
  </ul>
  </ul>
