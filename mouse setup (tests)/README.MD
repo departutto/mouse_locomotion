@@ -28,12 +28,12 @@
    
  <li><b>Run on the Stimulus PC:</b></li>
    <ul>
-     <li><i>server_script.m</i> - must be run first; switches between different tests and communicates the experimenter's parameters
+     <li><i>server_script.m</i> - must be run first; switches between different tests and communicates the experiment settings
      into those tests.</li>
-     <li><i>server_csdAnalysis.m</i> - implementation of stimulus presentation for client_csdAnalysis.m.</li>
-     <li><i>server_mappingRF</i> - implementation of stimulus presentation for client_mappingRF.m.</li>
-     <li><i>server_searchTest.m</i> - implementation of stimulus presentation for client_searchTest.m.</li>
-     <li><i>server_stimRepetition.m</i> - implementation of stimulus presentation for client_stimRepetition.m.</li>
+     <li><i>server_csdAnalysis.m</i> - implementation of stimulus presentation for <i>client_csdAnalysis.m</i>.</li>
+     <li><i>server_mappingRF</i> - implementation of stimulus presentation for <i>client_mappingRF.m</i>.</li>
+     <li><i>server_searchTest.m</i> - implementation of stimulus presentation for <i>client_searchTest.m</i>.</li>
+     <li><i>server_stimRepetition.m</i> - implementation of stimulus presentation for <i>client_stimRepetition.m</i>.</li>
    </ul>
    
  </ul><br>
