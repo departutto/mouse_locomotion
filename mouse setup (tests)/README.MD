@@ -46,7 +46,8 @@
    <li>The content of <i>client_newtest.m</i> is almost identical to any other similar file and incorporates the experiment settings.
    </li>
    <li>First, you need to launch <i>server_script.m</i> on the Stimulus PC, and only after that you can launch your test (e.g., 
-   <i>client_mytest.m</i>.</li>
+   <i>client_mytest.m)</i>.</li>
+   <li></li>
  </ul><br>
  
  Connection scheme between the Cheetah Data Acquisition box and a photodiode attached to the screen of Stimulus PC:<br><br>
