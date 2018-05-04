@@ -18,8 +18,8 @@
  <li><b>Run on the Control PC:</b></li>
    <ul>
      <li><i>client_csdAnalysis.m</i> - presentation of full-screen flashing checkerboards.</li> 
-     <li><i>client_mappingRF.m</i> - presentation of a white square on the black background at the evenly distributed positions across the 
-     screen.</li>
+     <li><i>client_mappingRF.m</i> - presentation of a white square on the black background at the predetermined positions that are evenly
+     distributed across the screen.</li>
      <li><i>client_searchTest.m</i> - presentation of a random sequence of stimuli at a specified position on the screen; only one 
      stimulus is presented at a time, and any two consecutive stimuli are separated by a blank screen.</li>
     <li><i>client_stimRepetition.m</i> - presentation of stimulus repetitions (e.g., X->X) and stimulus alternations (e.g., Y->X); each of
@@ -27,11 +27,12 @@
    </ul>
    
  <li><b>Run on the Stimulus PC:</b></li>
- <ul>
- <li><i>server_script.m</i></li>
- <li><i>server_csdAnalysis.m</i></li>
- <li><i>server_mappingRF</i></li>
- <li><i>server_searchTest.m</i></li>
- <li><i>server_stimRepetition.m</i></li>
- </ul>
+   <ul>
+     <li><i>server_script.m</i> - </li>
+     <li><i>server_csdAnalysis.m</i></li>
+     <li><i>server_mappingRF</i></li>
+     <li><i>server_searchTest.m</i></li>
+     <li><i>server_stimRepetition.m</i></li>
+   </ul>
+   
  </ul>
