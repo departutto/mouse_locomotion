@@ -41,4 +41,4 @@
  <br><br>
  
  Connection scheme between the Cheetah Data Acquisition box and a photodiode attached onto the screen of Stimulus PC:<br><br>
- <img scr="photodiode_connection.jpg">
+ <img scr="photodiode.jpg">
