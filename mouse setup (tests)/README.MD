@@ -54,8 +54,8 @@
    server_mytest.m</i>), rename them according to your needs (e.g., <i>client_mytest_version2.m</i>, <i>server_mytest_version2.m</i>)
    and work further only with the copied files.</li>
    <li>To ensure proper communication of the trial header and trial end information to the Cheetah Data Acquisition box, pause script  
-   execution while performing these actions (see variable 'transmission_time'). Otherwise, the latter information may be mixed with 
-   with photodiode events, thus complicating proper data retrieval.</li>
+   execution while performing those actions (see variable 'transmission_time'). Otherwise, the latter information may be mixed with 
+   photodiode events, thus complicating proper data retrieval.</li>
  </ul><br>
  
  Connection scheme between the Cheetah Data Acquisition box and a photodiode attached to the screen of Stimulus PC:<br><br>
