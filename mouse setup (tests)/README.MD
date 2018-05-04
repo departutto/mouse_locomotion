@@ -1,5 +1,7 @@
  <i>Last modified on May 4, 2018.</i><p>
+ 
  All Matlab files in the folder should be distributed among the setup computers according to the following scheme:<br><br>
+ 
  <img src='file_allocation_scheme.jpg'><br><br>
  
  List of the Matlab files:
@@ -11,10 +13,10 @@
  </ul>
  <li><b>Run on the Control PC:</b></li>
  <ul>
- <li><i>client_csdAnalysis.m</i></li> 
- <li><i>client_mappingRF.m</i></li>
- <li><i>client_searchTest.m</i></li>
- <li><i>client_stimRepetition.m</i></li>
+ <li><i>client_csdAnalysis.m</i> - presents full-screen flashing checkerboards.</li> 
+ <li><i>client_mappingRF.m</i> - randomly presents a checker at the predetermined positions evenly distributed across the screen.</li>
+ <li><i>client_searchTest.m</i> - presents a random sequence of stimuli, one at a time, at a specified position on the screen. </li>
+ <li><i>client_stimRepetition.m</i> - presents stimulus repetitions and stimulus alternations </li>
  </ul>
  <li><b>Run on the Stimulus PC:</b></li>
  <ul>
