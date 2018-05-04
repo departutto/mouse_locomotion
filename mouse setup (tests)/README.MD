@@ -28,7 +28,7 @@
    
  <li><b>Run on the Stimulus PC:</b></li>
    <ul>
-     <li><i>server_script.m</i> - must be run first; switches between different tests and communicates the experiment settings
+     <li><i>server_script.m</i> - must be run first; switches between different tests and communicates specific experiment settings
      into those tests.</li>
      <li><i>server_csdAnalysis.m</i> - implementation of stimulus presentation for <i>client_csdAnalysis.m</i>.</li>
      <li><i>server_mappingRF</i> - implementation of stimulus presentation for <i>client_mappingRF.m</i>.</li>
