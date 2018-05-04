@@ -37,3 +37,8 @@
    </ul>
    
  </ul>
+ 
+ <br><br>
+ 
+ Connection scheme between the Cheetah Data Acquisition box and a photodiode attached onto the screen of Stimulus PC:<br><br>
+ <img scr='neuralynx_photocell_connection_scheme.jpg'>
