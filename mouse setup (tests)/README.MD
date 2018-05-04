@@ -47,7 +47,10 @@
    </li>
    <li>First, you need to launch <i>server_script.m</i> on the Stimulus PC, and only after that you can launch your test (e.g., 
    <i>client_mytest.m)</i>.</li>
-   <li></li>
+   <li>To start stimulus presentation, push button 'Start test' in the graphical user interface on the Control PC, and 'Stop test'
+   otherwise.</li>
+   <li>At the end of your training/recordings session, push button 'Stop server' to halt <i>server_script.m</i> running on the Stimulus
+   PC and to be able to quit Matlab.</li>
  </ul><br>
  
  Connection scheme between the Cheetah Data Acquisition box and a photodiode attached to the screen of Stimulus PC:<br><br>
