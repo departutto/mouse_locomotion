@@ -40,10 +40,11 @@
  
  Notes:<br>
  <ul>
- <li>When creating a new test, you will have to create two separate Matlab scripts: one to provide a graphical user interface on the 
-  Control PC (e.g., <i>client_newtest.m</i>), and another to implement actual stimulus presentation on the Stimulus PC (e.g.,
-  <i>server_newtest.m</i>).</li>
- </ul>
+   <li>When creating a new test, you will have to create two separate Matlab scripts: one to provide a graphical user interface on the 
+   Control PC (e.g., <i>client_newtest.m</i>), and another to implement actual stimulus presentation on the Stimulus PC (e.g.,
+   <i>server_newtest.m</i>).</li>
+   <li>The content of <i>client_newtest.m</i> is almost identical to any other similar file and included the experiment parameters.</li>
+ </ul><br>
  
  Connection scheme between the Cheetah Data Acquisition box and a photodiode attached to the screen of Stimulus PC:<br><br>
  <img src='photodiode.jpg'>
