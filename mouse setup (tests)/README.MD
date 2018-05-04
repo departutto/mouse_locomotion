@@ -51,8 +51,9 @@
    otherwise.</li>
    <li>At the end of your training/recordings session, push button 'Stop server' to halt <i>server_script.m</i> running on the Stimulus
    PC and to be able to quit Matlab afterwards.</li>
-   <li>When modifying an existing test, it is strongly recommended to copy the files of that test, rename them according to your needs
-   and work further only with the copied files.</li>
+   <li>When modifying an existing test, it is strongly recommended to copy the files of that test (e.g., <i>client_mytest.m</i>, <i>
+   server_mytest.m</i>), rename them according to your needs (e.g., <i>client_mytest_version2.m</i>, <i>server_mytest_version2.m</i>)
+   and further work only with these files.</li>
  </ul><br>
  
  Connection scheme between the Cheetah Data Acquisition box and a photodiode attached to the screen of Stimulus PC:<br><br>
