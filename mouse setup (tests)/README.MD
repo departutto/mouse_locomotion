@@ -36,7 +36,7 @@
      <li><i>server_stimRepetition.m</i> - implementation of stimulus presentation for client_stimRepetition.m.</li>
    </ul>
    
- </ul>
+ </ul><br>
  
- Connection scheme between the Cheetah Data Acquisition box and a photodiode attached onto the screen of Stimulus PC:<br><br>
+ Connection scheme between the Cheetah Data Acquisition box and a photodiode attached to the screen of Stimulus PC:<br><br>
  <img src='photodiode.jpg'>
