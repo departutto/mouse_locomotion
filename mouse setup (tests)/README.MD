@@ -43,7 +43,7 @@
    <li>When creating a new test, you will have to create two separate Matlab scripts: one to provide a graphical user interface on the 
    Control PC (e.g., <i>client_newtest.m</i>), and another one to implement actual stimulus presentation on the Stimulus PC (e.g.,
    <i>server_newtest.m</i>).</li>
-   <li>The content of <i>client_newtest.m</i> is almost identical to any other similar file and incorporates the experiment settings.
+   <li>The content of <i>client_newtest.m</i> incorporates the experiment settings and is almost identical to any other similar file.
    </li>
    <li>First, you need to launch <i>server_script.m</i> on the Stimulus PC, and only after that you can launch your test (e.g., 
    <i>client_mytest.m)</i>.</li>
