@@ -4,7 +4,7 @@
 <li>Open script 'generate_trials.m' in the Matlab Editor.</li>
 <li>Make block no. 1 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).</li>
 <li>Make block no. 2 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
-<i>Script output: Events file: C:\Users\u0062274\Desktop\recordings\08-may-2018\datafiles\Events.nev</i><br>
+<i>Script output: Events file: Events.nev</i><br>
 <i>Script output: Block no. 2 was complete.</i></li>
 <li>Make block no. 3 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
 <i>Script output: Situation #1: Header start and stop indices = 5690 x 5697</i></li>
