@@ -33,4 +33,4 @@
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
 <b>Note</b> that the 1st retrieved trial is usually corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and to save this edited data
-structure for further data analyses.<br>
+structure for the further data analyses.<br>
