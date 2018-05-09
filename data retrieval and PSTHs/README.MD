@@ -1,7 +1,7 @@
-<b>Step 1.</b> Run the Matlab script 'generate_trials.m' to retrieve the experiment data.<p>
+<b>Step 1.</b> Run the Matlab script 'acquire_trials.m' to retrieve the experiment data.<p>
 <ul>
 <li>Open Matlab Editor by typing in 'edit' in the Matlab command line.</li>
-<li>Open script 'generate_trials.m' in the Matlab Editor.</li>
+<li>Open script 'acquire_trials.m' in the Matlab Editor.</li>
 <li>Make block no. 1 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).</li>
 <li>Make block no. 2 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
 <i>Script output: Events file: Events.nev</i><br>
@@ -32,9 +32,21 @@
 <li>Save the variables 'consolidated', 'time0', and 'trials' in a file (e.g., >> save '2018-05-08-mouse-68865-run-01.mat').</li>
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
-<b>Note!</b> Usually the 1st retrieved trial is corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and save this new edited data
+<b>Note!</b> Usually the 1st retrieved trial is corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and use this new edited data
 structure for any further data analysis.<br><br>
 
 <b>Step 2.</b> After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the python script 
 <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/get_statistics.py'>'get_statistics.py'</a> stored in the folder 
 <a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a> in the Windows command line as follows:<br>
+<i>In the Windows command line: > python stats_on_locomotion.py locomotion.txt</i><br>
+<i>Script output: Successfully processed: locomotion.txt</i><br>
+<i>Script output: Total number of the retrieved data points is 545902.</i><br>
+<i>Script output: Out of those, 545902 points are proper real numbers.</i><br>
+<i>Script output: We used 1.00 cm/sec as the threshold to detect locomotion.</i><br>
+<i>Script output: The number of data points above the threshold is 185453 (33.97%).</i><br>
+<i>Script output: The number of data points below the threshold is 360449 (66.03%).</i><br>
+<i>Script output: The average locomotion speed is 5.67 cm/sec.</i><br>
+<i>Script output: The median locomotion speed is 3.80 cm/sec.</i><br>
+<i>Script output: The 25th-75th percentiles of the locomotion speed are [ 1.3  8.9] cm/sec.</i><br>
+<i>Script output: The standard deviation of the locomotion speed is 4.91 cm/sec.</i><br>
+<i>Script output: The maximum locomotion speed detected is 34.40 cm/sec.</i><br>
