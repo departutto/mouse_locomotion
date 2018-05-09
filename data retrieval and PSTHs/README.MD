@@ -21,11 +21,14 @@
 <i>Block no. 4 was complete.</i></li>
 <li>Make block no. 5 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
 <i>Unique conditions = [1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36]</i><br>
-<i>Block no. 5 was complete.</i></li>
+<i>Block no. 5 was complete.</i><br>
+<img src='stimulus_conditions.jpg'></li>
 <li>Make block no. 6 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
-<i>Block no. 6 was complete.</i></li>
+<i>Block no. 6 was complete.</i><br>
+<img src='stimulus_duration.jpg'></li>
 <li>Make block no. 7 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
-<i>Block no. 7 was complete.</i></li>
+<i>Block no. 7 was complete.</i><br>
+<img src='inter_trial_intervals.jpg'></li>
 <li>Save the variables 'consolidated', 'time0', and 'trials' in a file (e.g., >> save '2018-05-08-mouse-68865-run-01.mat').</li>
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
