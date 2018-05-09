@@ -37,7 +37,7 @@ structure for any further data analysis.<br><br>
 
 <b>Step 2.</b> After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the python script 
 <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/get_statistics.py'>'get_statistics.py'</a> stored in the folder 
-<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a> in the Windows command line as follows:<br><br>
+<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a> in the Windows command line (cmd) as follows:<br><br>
 <i>In the Windows command line: > python get_statistics.py locomotion.txt</i><br>
 <i>Script output: Successfully processed: locomotion.txt</i><br>
 <i>Script output: Total number of the retrieved data points is 545902.</i><br>
