@@ -32,9 +32,9 @@
 <li>Save the variables 'consolidated', 'time0', and 'trials' in a file (e.g., >> save '2018-05-08-mouse-68865-run-01.mat').</li>
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
-<b>Note</b> that the 1st retrieved trial is usually corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and to save this edited data
-structure for the further data analyses.<br><br>
+<b>Note!</b> Usually the 1st retrieved trial is corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and save this new edited data
+structure for any further data analysis.<br><br>
 
-<b>Step 2.</b>After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the python script 
+<b>Step 2.</b> After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the python script 
 <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/get_statistics.py'>'get_statistics.py'</a> stored in folder 
-<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a>.
+<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a> in the Windows command line.
