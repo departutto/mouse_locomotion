@@ -1,4 +1,4 @@
-<b>Example of using script 'generate_trials.m'.</b><p>
+<b>Step 1.</b> Run the Matlab script 'generate_trials.m' to retrieve the experiment data.<p>
 <ul>
 <li>Open Matlab Editor by typing in 'edit' in the Matlab command line.</li>
 <li>Open script 'generate_trials.m' in the Matlab Editor.</li>
@@ -34,5 +34,7 @@
 </ul>
 <b>Note</b> that the 1st retrieved trial is usually corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and to save this edited data
 structure for the further data analyses.<br><br>
-After you retrieved the experiment information, next I recommend to explore statistics on the locomotion signal. To do this, run the python script 'get_statistics.py' that is stored in folder 
-<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'running wheel/data analysis'</a> in the Windows command line (cmd) as follows:<br>
+
+<b>Step 2.</b>After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the python script 
+<a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/get_statistics.py'>'get_statistics.py'</a> stored in folder 
+<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a>.
