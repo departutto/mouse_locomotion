@@ -32,5 +32,5 @@
 <li>Save the variables 'consolidated', 'time0', and 'trials' in a file (e.g., >> save '2018-05-08-mouse-68865-run-01.mat').</li>
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
-<b>Note</b> that the 1st retrieved trial is usually corrupted. For this reason I recommend to remove it by typing 'trials = trials(2:end)' in the Matlab command line and save such edited data
+<b>Note</b> that the 1st retrieved trial is usually corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and to save this edited data
 structure for further data analyses.<br>
