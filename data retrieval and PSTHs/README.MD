@@ -22,7 +22,7 @@
 <li>Make block no. 5 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
 <i>Unique conditions = [1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36]</i><br>
 <i>Block no. 5 was complete.</i><br>
-<img src='stimulus_conditions.jpg' height='70%' width='70%'></li>
+<img src='stimulus_conditions.jpg' height="210" width="280"></li>
 <li>Make block no. 6 active and execute it (Cell -> Evaluate Current Cell or Ctrl + Enter).<br>
 <i>Block no. 6 was complete.</i><br>
 <img src='stimulus_duration.jpg'></li>
