@@ -33,4 +33,6 @@
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
 <b>Note</b> that the 1st retrieved trial is usually corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and to save this edited data
-structure for the further data analyses.<br>
+structure for the further data analyses.<br><br>
+After you retrieved the experiment information, next I recommend to explore statistics on the locomotion signal. To do this, run the python script 'get_statistics.py' that is stored in folder 
+<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'running wheel/data analysis'</a> in the Windows command line (cmd) as follows:<br>
