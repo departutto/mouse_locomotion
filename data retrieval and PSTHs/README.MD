@@ -1,4 +1,4 @@
-<b>Example of using script 'generate_trials.m'.</b><p>
+<b>Example of using script '<u>generate_trials.m</u>'.</b><p>
 <ul>
 <li>Open Matlab Editor by typing in 'edit' in the Matlab command line.</li>
 <li>Open script 'generate_trials.m' in the Matlab Editor.</li>
