@@ -49,4 +49,11 @@ structure for any further data analysis.<br><br>
 <i>Script output: The median locomotion speed is 3.80 cm/sec.</i><br>
 <i>Script output: The 25th-75th percentiles of the locomotion speed are [ 1.3  8.9] cm/sec.</i><br>
 <i>Script output: The standard deviation of the locomotion speed is 4.91 cm/sec.</i><br>
-<i>Script output: The maximum locomotion speed detected is 34.40 cm/sec.</i><br>
+<i>Script output: The maximum locomotion speed detected is 34.40 cm/sec.</i><br><br>
+
+<b>Step 3.</b>
+<i>In the Windows command line: > split_per_presentation.py locomotion.txt</i><br>
+<i>Script output: Filename = locomotion.txt</i><br>
+<i>Script output: N(data points) = 545902</i><br>
+<i>Script output: N(corrupted) = 0</i><br>
+<img src='locomotion.txt.jpg' height="320" width="236"><br><br>
