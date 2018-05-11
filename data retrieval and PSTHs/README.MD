@@ -1,4 +1,4 @@
-<b>Step 1.</b> Run the Matlab script 'acquire_trials.m' to retrieve the experiment data.<p>
+<b>Step 1.</b> Run the Matlab script <a href='https://github.com/departutto/mouse_locomotion/blob/master/data%20retrieval%20and%20PSTHs/acquire_trials.m'>'acquire_trials.m'</a> to retrieve the experiment data.<p>
 <ul>
 <li>Open Matlab Editor by typing in 'edit' in the Matlab command line.</li>
 <li>Open script 'acquire_trials.m' in the Matlab Editor.</li>
