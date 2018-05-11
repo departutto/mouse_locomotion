@@ -58,9 +58,11 @@ The script is stored in the folder <a href='https://github.com/departutto/mouse_
 <i>Script output: Filename = locomotion.txt</i><br>
 <i>Script output: N(data points) = 545902</i><br>
 <i>Script output: N(corrupted) = 0</i><br>
-<img src='locomotion.txt.jpg' height="236" width="320"><br>
+<img src='locomotion.txt.jpg' height="236" width="320"><br><br>
 <b>Note!</b> The script <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/split_per_presentation.py'>'split_per_presentation.py'</a> generates two files. 
 One of the two files contains the locomotion signal split per stimulus presentation (file extension: .m), whereas the other file (file extension: .pdf) shows duration of stimulus presentations and 
-inter-stimulus intervals in data points (see figure above). The number of inter-stimulus intervals is equal to the number of stimulus presentations minus 1. Duration of stimulus presentations must be 
-the same over the entire recordings session. 
+inter-stimulus intervals in data points (see the figure above). The number of inter-stimulus intervals is equal to the number of stimulus presentations minus 1. Duration of stimulus presentations must be 
+the same over the entire recordings session. However, you may have a discrepancy of one data point due to different sampling frequencies of the monitor (60 Hz or 16.7 msec) and of the Arduino board (10 msec).
+<br>
+<b>Note!</b> 
 <br>
