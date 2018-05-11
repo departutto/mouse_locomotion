@@ -68,15 +68,15 @@ finally:
 # Compute duration of stimulus presentations and inter-stimulus intervals.
 photocell_events = [photocell_event for single_stim in photocell_events for photocell_event in single_stim]
 stim_durations = [photocell_events[counter] - photocell_events[counter - 1] for counter in range(1, len(photocell_events), 2)]
-iti_durations = [photocell_events[counter] - photocell_events[counter - 1] for counter in range(2, len(photocell_events), 2)]
+isi_durations = [photocell_events[counter] - photocell_events[counter - 1] for counter in range(2, len(photocell_events), 2)]
 
 # Show duration of stimulus presentations and inter-stimulus intervals in a single plot.
 fig = plt.figure()
 plt.subplot(1, 2, 1), plt.plot(stim_durations)
 plt.xlabel('stimulus presentation #'), plt.ylabel('duration, data points')
 plt.title('N(data points ) = ' + str(len(stim_durations)))
-plt.subplot(1, 2, 2), plt.plot(iti_durations)
-plt.xlabel('inter-trial interval #'), plt.ylabel('duration, data points')
+plt.subplot(1, 2, 2), plt.plot(isi_durations)
+plt.xlabel('inter-stimulus interval #'), plt.ylabel('duration, data points')
 plt.title('N(data points ) = ' + str(len(iti_durations)))
 plt.show()
 fig.savefig(filename + '.pdf')
