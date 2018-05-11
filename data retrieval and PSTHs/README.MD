@@ -63,6 +63,6 @@ The script is stored in the folder <a href='https://github.com/departutto/mouse_
 One of the two files contains the locomotion signal split per stimulus presentation (file extension: .m), whereas the other file (file extension: .pdf) shows duration of stimulus presentations and 
 inter-stimulus intervals in data points (see the figure above). The number of inter-stimulus intervals is equal to the number of stimulus presentations minus 1. Duration of stimulus presentations must be 
 the same over the entire recordings session. However, you may have a discrepancy of one data point due to different sampling frequencies of the monitor (60 Hz or 16.7 msec) and of the Arduino board (10 msec).
-<br>
+<br><br>
 <b>Note!</b> 
 <br>
