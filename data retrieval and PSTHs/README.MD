@@ -33,9 +33,9 @@
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
 <b>Note!</b> Usually the 1st retrieved trial is corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and use this new edited data
-structure for any further data analysis.<br><br>
+structure for any further data analysis.<br>
 
-<b>Step 2.</b> After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the python script 
+<b>Step 2.</b> After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the Python script 
 <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/get_statistics.py'>'get_statistics.py'</a> stored in the folder 
 <a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a> in the Windows command line (cmd) as follows:<br><br>
 <i>In the Windows command line: > python get_statistics.py locomotion.txt</i><br>
@@ -51,9 +51,12 @@ structure for any further data analysis.<br><br>
 <i>Script output: The standard deviation of the locomotion speed is 4.91 cm/sec.</i><br>
 <i>Script output: The maximum locomotion speed detected is 34.40 cm/sec.</i><br><br>
 
-<b>Step 3.</b>
+<b>Step 3.</b> You next split the locomotion signal per stimulus presentation by running the Python script 
+<a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/split_per_presentation.py'>'split_per_presentation.py'</a>. The script is stored in the folder 
+<a href='https://github.com/departutto/mouse_locomotion/tree/master/running%20wheel/data%20analysis'>'./running wheel/data analysis/'</a> and must be executed in the Windows command line (cmd) as 
+follows:<br><br>
 <i>In the Windows command line: > split_per_presentation.py locomotion.txt</i><br>
 <i>Script output: Filename = locomotion.txt</i><br>
 <i>Script output: N(data points) = 545902</i><br>
 <i>Script output: N(corrupted) = 0</i><br>
-<img src='locomotion.txt.jpg' height="320" width="236"><br><br>
+<img src='locomotion.txt.jpg' height="236" width="320"><br><br>
