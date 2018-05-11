@@ -67,6 +67,6 @@ of the monitor (60 Hz or 16.7 msec) and of the Arduino board (10 msec).<br><br>
 <b>Note!</b> The script <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/split_per_presentation.py'>'split_per_presentation.py'</a> is based on the 
 assumption that each stimulus presentation is accompanied by the two photocell events that are linked to the first and last frames of that presentation.<br><br>
 <b>Note!</b> In the script <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/split_per_presentation.py'>'split_per_presentation.py'</a> one must specify: 
-(1) the maximum duration of stimulus presentation (variable 'MAX_STIM_DURATION'), and (2) the number of data points before and after stimulus presentation to be included in the 
-retrieved locomotion signal per stimulus presentation (variable 'N_POINTS').
+(1) the maximum duration of stimulus presentation (variable 'MAX_STIM_DURATION'), and (2) the number of data points before and after stimulus presentation that are needed to be included in the 
+retrieved locomotion signal split per stimulus presentation (variable 'N_POINTS').
 <br>
