@@ -33,12 +33,12 @@
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
 <b>Note!</b> Usually the 1st retrieved trial is corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and use this new edited data
-structure for any further data analysis. However, if the trial presentation order is really important, another option could be to introduce a trial marker that indicates whether the trial either can enter the analyses of spiking activity or should be discarded instead. The Matlab code for such a marker can be as follows:<br><br>
+structure for any further data analysis. However, if the trial presentation order is really important, another option could be to introduce a trial marker that indicates whether the trial either can enter the analyses of spiking activity or should be discarded instead. The Matlab code for such a marker could look as follows:<br><br>
 <i>for counter = 1:length(trials)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;trials(counter).corrupted = false;<br>
 end<br>
 trials(1).corrupted = true;<br>
-clear counter</i>
+clear counter;</i>
 <br><br>
 
 <b>Step 2.</b> After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the Python script 
