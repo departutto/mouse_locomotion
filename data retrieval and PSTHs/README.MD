@@ -33,7 +33,13 @@
 <li>Clear the Matlab workspace by typing in 'clear all' in the Matlab command line.</li>
 </ul>
 <b>Note!</b> Usually the 1st retrieved trial is corrupted. For this reason I recommend to remove it by typing in 'trials = trials(2:end)' in the Matlab command line and use this new edited data
-structure for any further data analysis.<br><br>
+structure for any further data analysis. However, if the trial presentation order is really important, another option to cope with this situation is to introduce a trial marker that indicates whether the trial can be analyzed or should be discarded instead. The Matlab code for such a marker can be as follows:<br>
+for counter = 1:length(trials)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;trials(counter).corrupted = false;<br>
+end<br>
+trials(1).corrupted = true;<br>
+clear counter
+<br><br>
 
 <b>Step 2.</b> After you retrieved the experiment information, next explore statistics on the locomotion signal. To do this, run the Python script 
 <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/get_statistics.py'>'get_statistics.py'</a> stored in the folder 
