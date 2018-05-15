@@ -5,7 +5,7 @@ import msvcrt
 import time
 
 # Port to which the motion sensor is connected to.
-port_name = "COM3"
+port_name = "COM4"
 
 # Sampling period of the motion sensor, in seconds. 
 sampling_period = 0.010
