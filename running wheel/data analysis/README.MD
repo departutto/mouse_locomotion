@@ -26,8 +26,8 @@ N(data points) = 437601<br>
 N(corrupted) = 0<br><br>
 <b>Output.</b>
 <ul>
-<li>Matlab file <i>data_file.txt.m</i> that contains the locomotion signal per stimulus presentation.</li>
-<li>Figure file <i>data_file.txt.pdf</i> that shows duration of stimulus presentations and inter-trial intervals. 
+<li>Matlab file <i>data_file.m</i> that contains the locomotion signal per stimulus presentation.</li>
+<li>Figure file <i>data_file.pdf</i> that shows duration of stimulus presentations and inter-trial intervals. 
 Note that a single trial is assumed to be made up of two separate stimulus presentations.<br><img src="data_file.txt.jpg"></li>
 </ul>
 </li>
