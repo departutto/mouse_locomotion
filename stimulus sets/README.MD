@@ -6,7 +6,3 @@
 <b>Dimensions:</b> 59.77 x 33.62 cm<br>
 
 <br>
-
-<b>Distance from the eye to:</b><br>
-- the monitor screen: 32..34 cm<br>
-- the surface of the table: 33..35 cm<br>
