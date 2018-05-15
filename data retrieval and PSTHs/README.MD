@@ -75,4 +75,7 @@ assumption that each stimulus presentation is accompanied by the two photocell e
 <b>Note!</b> In the script <a href='https://github.com/departutto/mouse_locomotion/blob/master/running%20wheel/data%20analysis/split_per_presentation.py'>'split_per_presentation.py'</a> one must specify: 
 (1) the maximum duration of stimulus presentation (variable 'MAX_STIM_DURATION'), and (2) the number of data points before and after stimulus presentation that are needed to be included in the 
 retrieved locomotion signal split per stimulus presentation (variable 'N_POINTS').
-<br>
+<br><br>
+<b>Step 4.</b> Combine the locomotion data together with stimulus presentations. For that you need to have one .mat file that contains variable 'trials' (e.g., 2018-05-08-mouse-68865-run-01.mat) and one .m file with the locomotion data split per stimulus presentation (e.g., locomotion.m). You need to run the Matlab script 'incorporate_speed_signal.m' and specify the two aforementioned files as input to the script. The script will extend variable 'trials' by adding field 'velocity' that contains the locomotion signal per stimulus presentation.<br><br>   
+
+<b>Note!</b> By default the script 'incorporate_speed_signal.m' assumes that each trial is made up of two separate stimulus presentations. If this is not the case, you should specify the number of stimulus presentation per trial in the script input.
