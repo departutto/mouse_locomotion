@@ -34,7 +34,7 @@ else:
 
 try:
     raw_data = open(filename, 'rt')
-    trial_data = open(filename + '.m', 'wt')
+    trial_data = open(filename[:-4] + '.m', 'wt')
     
     # Read the raw velocity signal from a file.
     for line in raw_data:
@@ -79,4 +79,4 @@ plt.subplot(1, 2, 2), plt.plot(isi_durations)
 plt.xlabel('inter-stimulus interval #'), plt.ylabel('duration, data points')
 plt.title('N(data points ) = ' + str(len(isi_durations)))
 plt.show()
-fig.savefig(filename + '.pdf')
+fig.savefig(filename[:-4] + '.pdf')
