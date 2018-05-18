@@ -1,4 +1,4 @@
-function [psths, conditions] = plot_psths(varargin)
+function [psths, conditions, locomotion] = plot_psths(varargin)
 
     if isempty(varargin)
         fprintf('Exit code #1.\n');
@@ -44,6 +44,12 @@ function [psths, conditions] = plot_psths(varargin)
         return;
     end
     
+    if length(varargin) > 4
+        locomotion_fun = varargin{5};
+    else
+        locomotion_fun = @(x) false;
+    end
+    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     % Number of trials.
@@ -74,6 +80,9 @@ function [psths, conditions] = plot_psths(varargin)
     % Stimulus conditions.
     conditions = [];
     
+    % Indicates whether the animal was running or standing still in a trial.
+    locomotion = [];
+    
     % Peri-stimulus time histograms (PSTHs) aligned to each photoevent.
     psths = {};
     for counter = 1:n_unique_photoevents
@@ -88,6 +97,7 @@ function [psths, conditions] = plot_psths(varargin)
         end
         
         conditions(end + 1) = trials(trial_no).condition;
+        locomotion(end + 1) = locomotion_fun(trials(trial_no));
         
         % For each photoevent construct a PSTH aligned to that event.
         for photoevent_no = 1:n_unique_photoevents
